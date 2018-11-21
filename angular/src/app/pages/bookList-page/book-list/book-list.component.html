@@ -1,0 +1,57 @@
+<div id="container">
+  <div><h2>图书信息管理</h2></div>
+<div id="main">
+  <div class="div1"><label>出版社：</label>
+    <select class="form-control" [(ngModel)]="filters.publisherId">
+      <option *ngFor="let item of publishers" [value]="item.Id">{{item.Name}}</option>
+    </select>
+  </div>
+  <div class="div1"><label>分类：</label>
+    <select class="form-control" [(ngModel)]="filters.categoryId">
+    <option *ngFor="let item of categories" [value]="item.Id">{{item.Name}}</option>
+  </select>
+  </div>
+  <div class="div3">
+    <input type="text"  class="form-control btn1" placeholder="请输入书名" [(ngModel)]="filters.keyword">
+    <button class="btn btn-success btn1 btn4" (click)="btnSearch_onclick()"><i class="glyphicon glyphicon-search"></i></button>
+  </div>
+  <div class="div2">
+    <button type="button" class="btn btn-primary" (click)="btnAddBook_onclick()">
+    <i class="glyphicon glyphicon-plus"></i>添加</button>
+  </div>
+    <table class="table table-striped" >
+      <thead>
+      <tr>
+        <th>序号</th>
+        <th>封面</th>
+        <th>图书名称</th>
+        <th>图书所属类别</th>
+        <th>图书所属出版社</th>
+        <th>库存总数</th>
+        <th>操作</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of temp;let i=index;">
+        <td>{{i+1+pageIndex*pageSize}}</td>
+        <td><img src="{{item.Book.Image}}" style="width: 100px;height:100px"/></td>
+        <td>{{item.Book.Name}}</td>
+        <td>{{item.Book.Category.Name}}</td>
+        <td>{{item.Book.Publisher.Name}}</td>
+        <td>{{item.Book.Amount}}</td>
+        <td>
+          <button class="btn btn-success" (click)="btnDetail_onclick(item)">详情</button>
+          <button class="btn btn-primary btn3" (click)="btnEdit_onclick(item)">编辑</button>
+          <button class="btn btn-warning btn3" (click)="btnStorage_onclick(item)">入库</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  <div class="box-footer clearfix">
+    <ul class="pagination pagination-sm no-margin pull-left ulIndex">
+      <li *ngFor="let i of pages" (click)="changeIndex(i)" [ngClass]="{'active':pageIndex==i}">{{i+1}}</li>
+    </ul>
+  </div>
+</div>
+</div>
+<app-book-storage #storageDialog (afterStorage)="btnStorageDialog_onclick()"></app-book-storage>

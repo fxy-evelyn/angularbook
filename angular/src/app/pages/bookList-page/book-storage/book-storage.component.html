@@ -1,0 +1,12 @@
+<div id="dialog" *ngIf="state">
+  <div>
+    <div id="dialogHead">图书入库</div>
+    <div id="dialogBody">
+      <label>入库数量：</label><input type="text" class="form-control btn2" [(ngModel)]="storageCount" >
+    </div>
+    <div id="dialogFooter">
+      <button id="agree" class="btn btn-success" (click)="btnConfirm($event);">确认</button>
+      <button id="disagree" class="btn btn-default" (click)="btnCancel();">取消</button>
+    </div>
+  </div>
+</div>

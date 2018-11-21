@@ -1,0 +1,36 @@
+<div class="container">
+  <div><h3>新增图书</h3><a (click)="location.back();">返回</a></div>
+  <div class="main">
+    <div>
+      <img [src]="book.srcPath">
+      <input type="file" class="btn5" (change)="fileChange($event)" >
+      <span>{{lblMessage}}</span>
+    </div>
+    <div ><label>图书名称：</label><input type="text" class="form-control" [(ngModel)]="book.name"></div>
+    <div><label>图书ISBN：</label><input type="text" class="form-control" [(ngModel)]="book.isbn"></div>
+    <div><label>出版日期：</label><input type="date" class="form-control" [(ngModel)]="book.publishDate"></div>
+    <div>
+      <label>图书类别：</label>
+      <select class="form-control" [(ngModel)]="book.categoryId">
+        <option *ngFor="let item of categories" [value]="item.Id">{{item.Name}}</option>
+      </select>
+    </div>
+    <div>
+      <label>图书出版社：</label>
+      <select class="form-control" [(ngModel)]="book.publisherId">
+        <option *ngFor="let item of publishers" [value]="item.Id">{{item.Name}}</option>
+      </select>
+    </div>
+    <div>
+      <label>图书作者：</label>
+      <select class="form-control" [(ngModel)]="book.authorId">
+        <option *ngFor="let item of authors" [value]="item.Id">{{item.Name}}</option>
+      </select>
+    </div>
+    <div>
+      <label>图书简介：</label>
+      <textarea [(ngModel)]="book.introduce"></textarea>
+    </div>
+    <div><button class="btn btn-success" (click)="btnSave_onclick($event)">保存</button><button class="btn btn-default" (click)="location.back();">取消</button></div>
+  </div>
+  </div>

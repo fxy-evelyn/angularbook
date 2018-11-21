@@ -1,0 +1,18 @@
+<div class="container">
+  <div>
+    <label>旧密码：</label>
+    <input type="password" class="form-control" placeholder="请输入旧密码" [(ngModel)]="oldPassword"><br>
+    <span>{{lblOldMessage}}</span>
+    </div>
+  <div>
+    <label>新密码：</label>
+    <input type="password" class="form-control" placeholder="请输入新密码" [(ngModel)]="newPassword"><br>
+    <span>{{lblNewMessage}}</span>
+  </div>
+  <div>
+    <label>确认密码：</label>
+    <input type="password" class="form-control" placeholder="请输入确认密码" [(ngModel)]="confirmPassword"><br>
+    <span>{{lblConfirmMessage}}</span>
+  </div>
+  <div><button class="btn btn-primary" (click)="btnConfirm_onclick()">确认</button><button class="btn btn-default" (click)="btnCancel_onclick()">取消</button></div>
+</div>

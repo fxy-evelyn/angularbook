@@ -1,0 +1,57 @@
+<div class="wrapper">
+  <!-- Main Header -->
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="#" class="logo">
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>图书管理系统</b></span>
+    </a>
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- User Account Menu -->
+          <li class="dropdown user user-menu">
+            <!-- Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="hidden-xs">{{userName}}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">菜单</li>
+        <!-- Optionally, you can add icons to the links -->
+        <li routerLinkActive="active"><a [routerLink]="['./bookReader']"><i class="glyphicon glyphicon-user"></i> <span>读者管理</span></a></li>
+        <li routerLinkActive="active"><a [routerLink]="['./bookCategory']"><i class="glyphicon glyphicon-th-large"></i> <span>图书分类管理</span></a></li>
+        <li routerLinkActive="active"><a [routerLink]="['./bookList']"><i class="glyphicon glyphicon-list-alt"></i> <span>图书信息管理</span></a></li>
+        <li routerLinkActive="active"><a [routerLink]="['./bookOrder']"><i class="glyphicon glyphicon-shopping-cart"></i> <span>订单管理模块</span></a></li>
+        <li routerLinkActive="active"><a [routerLink]="['./personal']"><i class="glyphicon glyphicon-cog"></i> <span>管理员管理</span></a></li>
+        <li routerLinkActive="active" (click)="btnClear_onclick()"><a><i class="glyphicon glyphicon-off"></i> <span>注销</span></a></li>
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content container-fluid">
+      <router-outlet></router-outlet>
+    </section>
+    <!-- /.content -->
+  </div>
+</div>
+

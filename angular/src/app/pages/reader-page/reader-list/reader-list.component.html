@@ -1,0 +1,36 @@
+<div id="container">
+  <div><h2>读者信息管理</h2></div>
+  <div class="div3">
+    <input type="text"  class="form-control btn1" [(ngModel)]="keyword" placeholder="请输入读者姓名">
+    <button class="btn btn-success btn1 btn4" (click)="btnSearch_onclick()"><i class="glyphicon glyphicon-search"></i></button>
+  </div>
+
+  <div>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>序号</th>
+        <th>手机号</th>
+        <th>姓名</th>
+        <th>操作</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of temp;let i=index;">
+        <td>{{i+1+pageIndex*pageSize}}</td>
+        <td>{{item.Phone}}</td>
+        <td>{{item.Name}}</td>
+        <td>
+          <a href="javascript:void(0)" class="btn btn-primary">编辑</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box-footer clearfix">
+    <ul class="pagination pagination-sm no-margin pull-left ulIndex">
+      <li *ngFor="let i of pages" (click)="changeIndex(i)" [ngClass]="{'active':pageIndex==i}">{{i+1}}</li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div id="container">
+  <div><h4>待归还列表</h4></div>
+  <div id="main">
+    <div class="mainItem" *ngFor="let item of temp;let i=index">
+      <div class="mainItem-top"><span>第{{i+1+pageIndex*pageSize}}单 &nbsp;&nbsp;订单号：{{item.BorrowNumber}}</span><span>借阅时间：{{item.CreateTime|date:"yyyy-MM-dd" }}</span></div>
+      <div class="mainItem-main">
+        <dl class="clearfix">
+          <dt><img [src]="item.BookImage"></dt>
+          <dd><span>图书名称：{{item.BookName}}</span><br><span>图书编号：{{item.BookNumber}}</span><br><span>订单状态：{{getState(item.State)}}</span></dd>
+          <dd><button class="btn btn-success" (click)="btnReturn_onclick(item,i)">归还</button></dd>
+        </dl>
+      </div>
+      <div class="mainItem-bottom"><span>借阅人：{{item.Reader.Name}}</span><span>联系电话：{{item.Reader.Phone}}</span></div>
+    </div>
+  </div>
+  <div class="box-footer clearfix">
+    <ul class="pagination pagination-sm no-margin pull-left ulIndex">
+      <li *ngFor="let i of pages" (click)="changeIndex(i)" [ngClass]="{'active':pageIndex==i}">{{i+1}}</li>
+    </ul>
+  </div>
+</div>
+

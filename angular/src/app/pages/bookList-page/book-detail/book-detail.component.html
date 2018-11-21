@@ -1,0 +1,44 @@
+<div class="container">
+  <div><h3>图书详情</h3><a (click)="location.back();">返回</a></div>
+  <div class="main">
+    <div><img [src]="book.Book.Image"></div>
+    <div ><label>图书名称：</label>{{book.Book.Name}}</div>
+    <div><label>图书ISBN：</label>{{book.Book.ISBN}}</div>
+    <div><label>出版日期：</label>{{book.Book.PublishDate}}</div>
+    <div>
+      <label>图书类别：</label>{{book.Book.Category.Name}}
+    </div>
+    <div>
+      <label>图书出版社：</label>{{book.Book.Publisher.Name}}
+    </div>
+    <div>
+      <label>图书作者：</label>{{book.Book.Author.Name}}
+    </div>
+    <div>
+      <label>图书简介：</label>{{book.Book.Introduce}}
+    </div>
+  </div>
+
+  <div class="mainDetail">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>序号</th>
+          <th>图书Id</th>
+          <th>图书编号</th>
+          <th>图书馆名</th>
+          <th>状态</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of book.Detail;let i=index">
+          <td>{{i+1}}</td>
+          <td>{{item.Id}}</td>
+          <td>{{item.Number}}</td>
+          <td>{{item.LibraryName}}</td>
+          <td>{{item.State==1?'在库':'已借出'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

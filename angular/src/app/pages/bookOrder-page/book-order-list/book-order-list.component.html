@@ -1,0 +1,18 @@
+<div id="container">
+  <div><h2>订单信息管理</h2></div>
+
+  <div class="panel-body">
+    <ul  class="nav nav-tabs">
+      <li routerLinkActive="active"><a [routerLink]="['./bookDelivery']">待配送</a>
+      </li>
+      <li routerLinkActive="active"><a [routerLink]="['./bookRestore']" >待归还</a>
+      </li>
+      <li routerLinkActive="active"><a [routerLink]="['./bookOther']">其他</a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

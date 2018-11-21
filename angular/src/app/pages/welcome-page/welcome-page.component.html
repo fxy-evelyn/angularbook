@@ -1,0 +1,20 @@
+<div id="login">
+  <div>
+    <form id="myform" method="get">
+      <div><span>登录</span></div>
+      <div class="divContent">
+        <label for="txtPhone">账号：</label>
+        <input type="text" id="txtPhone" name="txtPhone" [(ngModel)]="data.phone">
+        <div class="divDisplay">{{lblPhone}}</div>
+      </div>
+
+      <div class="divContent">
+        <label for="txtPassword">密码：</label>
+        <input type="password" id="txtPassword" name="txtPassword" [(ngModel)]="data.password">
+        <div class="divDisplay">{{lblPassword}}</div>
+      </div>
+
+      <div class="footer"><button (click)="btnLogin_onclick()">登录</button></div>
+    </form>
+  </div>
+</div>

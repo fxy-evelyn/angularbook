@@ -1,0 +1,16 @@
+<div id="dialog" *ngIf="state">
+  <div>
+    <div id="dialogHead">编辑图书分类区域</div>
+    <div id="dialogBody">
+      <label>分类图标：</label>
+      <img [src]="srcPath">
+      <input type="file" id="file"  (change)="fileChange($event)"/><br>
+      <span>{{lblMessage}}</span>
+      <label>分类名称：</label><input type="text" class="form-control btn2" [(ngModel)]="cateName">
+    </div>
+    <div id="dialogFooter">
+      <button id="agree" class="btn btn-success" (click)="btnConfirm($event);">确认</button>
+      <button id="disagree" class="btn btn-default" (click)="btnCancel();">取消</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+table{
+  margin-top: 20px;
+}
+#container{
+  padding:0px 50px;
+}
+#container>div:nth-child(2){
+margin-top: 40px;
+}
+table td{
+  height: 60px;
+  line-height: 60px;
+}
+.btn1{
+  border-radius: 0;
+}
+.div3>.form-control{
+  width: 240px;
+  display: inline-block;
+  position: relative;
+  top:1px;
+}
+.ulIndex{
+  padding-left: 0px;
+}
+.ulIndex>li{
+  list-style: none;
+  display: inline-block;
+  border:1px solid #336699;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color:#369;
+}
+.ulIndex>li+li{
+  margin-left: 5px;
+}
+.ulIndex>li.active,.ulIndex>li:hover{
+  background: #336699;
+  color:white;
+  font-weight: bold;
+}
+

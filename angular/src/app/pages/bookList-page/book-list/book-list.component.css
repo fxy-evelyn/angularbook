@@ -1,0 +1,78 @@
+#container{
+  padding:0px 50px;
+}
+#main{
+  margin-top: 40px;
+}
+select{
+  width: 240px;
+  display: inline-block;
+}
+.div1,.div2,.div3{
+  display: inline-block;
+}
+.div1+.div1{
+  margin-left: 10px;
+}
+.ng-empty{
+  width:240px;
+  height:46px;
+  box-sizing: border-box;
+  position: relative;
+  top:1px;
+}
+.btn1{
+  border-radius: 0;
+}
+.div2{
+  float:right;
+}
+table{
+  margin-top: 20px;
+}
+table th{
+  text-align: center;
+}
+table td{
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+.container>div:nth-child(2){
+  margin-top: 40px;
+}
+table td>button+button{
+  margin-left: 10px;
+}
+.div3>.form-control{
+  width: 240px;
+  display: inline-block;
+  margin-left: 20px;
+  position: relative;
+  top:-1px;
+}
+.btn4{
+  position: relative;
+  top:-2px;
+}
+.ulIndex{
+  padding-left: 0px;
+}
+.ulIndex>li{
+  list-style: none;
+  display: inline-block;
+  border:1px solid #336699;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color:#369;
+}
+.ulIndex>li+li{
+  margin-left: 5px;
+}
+.ulIndex>li.active,.ulIndex>li:hover{
+  background: #336699;
+  color:white;
+  font-weight: bold;
+}
